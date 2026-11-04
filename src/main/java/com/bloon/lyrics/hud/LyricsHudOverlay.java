@@ -3,7 +3,6 @@ package com.bloon.lyrics.hud;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
-// En 1.21 se usa DeltaTracker en lugar de RenderTickCounter
 import net.minecraft.client.DeltaTracker;
 
 import java.util.Map;
