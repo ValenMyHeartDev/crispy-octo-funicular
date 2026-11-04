@@ -18,8 +18,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      # Forzar el uso de una versión de Gradle compatible con Loom 1.7 (Gradle 8.8)
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.8'
 
       - name: Make gradlew executable
         run: chmod +x gradlew || true
