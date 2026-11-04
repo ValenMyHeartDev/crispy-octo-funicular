@@ -3,13 +3,14 @@ package com.bloon.lyrics.hud;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.RenderTickCounter;
+// En 1.21 se usa DeltaTracker en lugar de RenderTickCounter
+import net.minecraft.client.DeltaTracker;
 
 import java.util.Map;
 import java.util.TreeMap;
 
 public class LyricsHudOverlay implements HudRenderCallback {
-    private static String currentLyricsLine = "Bloon Lyrics - Conectando a Spotify / YouTube...";
+    private static String currentLyricsLine = "Bloon Lyrics - Esperando música...";
     private static TreeMap<Long, String> activeLyrics = new TreeMap<>();
     private static long songStartTime = 0;
 
@@ -22,7 +23,7 @@ public class LyricsHudOverlay implements HudRenderCallback {
     }
 
     @Override
-    public void onHudRender(DrawContext drawContext, RenderTickCounter tickCounter) {
+    public void onHudRender(DrawContext drawContext, DeltaTracker deltaTracker) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client == null || client.options.hudHidden) return;
 
