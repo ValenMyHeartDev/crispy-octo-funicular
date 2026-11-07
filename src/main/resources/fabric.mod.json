@@ -1,26 +1,29 @@
 {
   "schemaVersion": 1,
   "id": "bloon-lyrics",
-  "version": "1.0.0",
+  "version": "${version}",
   "name": "Bloon Lyrics",
-  "description": "Mod para mostrar letras sincronizadas de Spotify y YouTube en tiempo real.",
+  "description": "Un mod de cliente para mostrar letras sincronizadas en Minecraft.",
   "authors": [
     "Bloon"
   ],
   "contact": {
-    "homepage": "https://github.com/tu-usuario/bloon-lyrics"
+    "sources": "https://github.com/tu-usuario/tu-repositorio"
   },
   "license": "MIT",
   "icon": "assets/bloon-lyrics/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.bloon.lyrics.BloonLyrics"
+      "com.bloon.lyrics.BloonLyricsClient"
     ]
   },
+  "mixins": [
+    "bloon-lyrics.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.16.5",
-    "minecraft": "~1.21.11",
+    "minecraft": "1.21.11",
     "java": ">=21",
     "fabric-api": "*"
   }
